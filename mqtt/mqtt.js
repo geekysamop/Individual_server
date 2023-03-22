@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 
-const SerialPort = require('serialport');
-const Readline = require('@serialport/parser-readline');
+// const SerialPort = require('serialport');
+// const Readline = require('@serialport/parser-readline');
 const SensorData = require('./models/arduinodata');
 const Light = require('./models/lightschema');
 
@@ -27,10 +27,10 @@ app.use(function (req, res, next) {
     next();
   });
 
-const Ardport = new SerialPort('COM14', { baudRate: 9600 });
-const parser = new Readline();
+// const Ardport = new SerialPort('COM14', { baudRate: 9600 });
+// const parser = new Readline();
 
-Ardport.pipe(parser);
+// Ardport.pipe(parser);
 
 
 const port = 5001;
@@ -44,11 +44,12 @@ const client = mqtt.connect("mqtt://broker.hivemq.com:1883");
 
 client.on('connect', () => {
     console.log('mqtt connected');
+    client.subscribe('/sensorData');
 });
 
-Ardport.on("open", () => {
-    console.log('serial port is now open');
-});
+// Ardport.on("open", () => {
+//     console.log('serial port is now open');
+// });
 
 app.get('/api/sensorData', (req, res) => {
     SensorData.find({})
@@ -64,30 +65,52 @@ app.get('/api/sensorData', (req, res) => {
 var value =1;
 state = '';
 
-parser.on('data', (data) => {
-    console.log('Arduino is Saying: ' + data);
-    if(data=='Motion detected\r'){
-        value=1;
-        state='On';
-    }
-    else{
-        value=0;
-        state='Off';
-    }
-    const filter = { light: 1 };
-    const update = { state: state };
-    const sensordata = new SensorData({ data,value })
-    const result =  Light.findOneAndUpdate(filter, update).exec();
+// parser.on('data', (data) => {
+//     console.log('Arduino is Saying: ' + data);
+//     if(data=='Motion detected\r'){
+//         value=1;
+//         state='On';
+//     }
+//     else{
+//         value=0;
+//         state='Off';
+//     }
+//     const filter = { light: 1 };
+//     const update = { state: state };
+//     const sensordata = new SensorData({ data,value })
+//     const result =  Light.findOneAndUpdate(filter, update).exec();
     
-    console.log(sensordata)
-    const topic = '/sensorData';
-    const message = JSON.stringify({ sensordata });
-    client.publish(topic, message, () => {
-        console.log('published new message');
-      });
-    sensordata.save();
-})
+//     console.log(sensordata)
+//     const topic = '/sensorData';
+//     const message = JSON.stringify({ sensordata });
+//     client.publish(topic, message, () => {
+//         console.log('published new message');
+//       });
+//     sensordata.save();
+// })
 
+client.on('message', (topic, message) => {
+    if (topic === '/sensorData') {
+        console.log('Received data:', message.toString());
+        var data = message.toString();
+        if(data=='Motion detected'){
+            value=1;
+            state='On';
+        }
+        else{
+            value=0;
+            state='Off';
+        }
+        const filter = { light: 1 };
+        const update = { state: state };
+        const sensordata = new SensorData({ data,value })
+        const result =  Light.findOneAndUpdate(filter, update).exec();
+        
+        console.log(sensordata)
+        sensordata.save();
+    }
+
+});    
 
 app.listen(port, () => {
     console.log(`listening on port http://localhost:${port}`);
