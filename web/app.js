@@ -1,5 +1,5 @@
 const API_URL = 'https://api-akjp.onrender.com/api';
-const SENSOR_API = 'http://localhost:5001/api/sensorDatagt'
+const SENSOR_API = 'https://mqtt-2xwg.onrender.com/api/sensordata'
 $.get(`${API_URL}/light`)
     .then(response => {
         response.forEach(lights => {
