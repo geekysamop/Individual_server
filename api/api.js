@@ -9,7 +9,13 @@ const bodyParser = require('body-parser');
 const Device = require('./models/devices');
 const app = express();
 
-mongoose.connect('mongodb+srv://samarth:Samarth123@cluster0.obcyplu.mongodb.net/mydb', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://samarth:Samarth123@cluster0.obcyplu.mongodb.net/mydb', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Successfully connected to MongoDB');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
