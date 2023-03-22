@@ -115,7 +115,7 @@ app.post('/register', async(req, res) => {
     if(user) return res.status(400).send("user already exist! ");
 
     const newUser = await User.create(req.body);
-    res.status(201).send(newUser);
+    res.redirect('/welcome');
 })
 
 app.post('/login', passport.authenticate('local', {
