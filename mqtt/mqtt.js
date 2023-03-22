@@ -44,7 +44,7 @@ const client = mqtt.connect("mqtt://broker.hivemq.com:1883");
 
 client.on('connect', () => {
     console.log('mqtt connected');
-    client.subscribe('/sensorData');
+    client.subscribe('/SamsensorDatas');
 });
 
 // Ardport.on("open", () => {
@@ -90,7 +90,7 @@ state = '';
 // })
 
 client.on('message', (topic, message) => {
-    if (topic === '/sensorData') {
+    if (topic === '/SamsensorDatas') {
         console.log('Received data:', message.toString());
         var data = message.toString();
         if(data=='Motion detected'){
