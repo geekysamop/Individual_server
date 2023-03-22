@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://api-akjp.onrender.com/api';
 const SENSOR_API = 'http://localhost:5001/api/sensorDatagt'
 $.get(`${API_URL}/light`)
     .then(response => {
