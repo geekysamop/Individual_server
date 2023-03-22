@@ -1,0 +1,23 @@
+[
+    {
+        "_id": "6414a40e8e28b718ac4c9898",
+        "id": 3,
+        "name": "Saksham",
+        "access": "grant",
+        "camera": "Off"
+    },
+    {
+        "_id": "6414a40e8e28b718ac4c9899",
+        "id": 2,
+        "name": "Shravel",
+        "access": "grant",
+        "camera": "Off"
+    },
+    {
+        "_id": "6414a40e8e28b718ac4c989a",
+        "id": 1,
+        "name": "Samarth",
+        "access": "deny",
+        "camera": "Off"
+    }
+]

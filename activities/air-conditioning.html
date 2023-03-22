@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Air Conditioning Control Panel</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../resources/styles.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="../welcome">Smart Building</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="../activities/lighting">Lighting</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="../activities/air-conditioning">Air Conditioning</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../activities/security">Security</a>
+					</li>
+					<!-- <li class="nav-item">
+						<a class="nav-link" href="others.html">Others</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1>Air Conditioning Control Panel</h1>
+				</div>
+			</div>
+			<div class="row">
+				<table class="table" style="text-align: center;" id="acdata">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>State</th>
+							<th>Temprature</th>
+							<th>Mode</th>
+							<th>Speed</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+	<div class="container">
+		<div class="row" style="margin: 50px; ">
+			<form id="acforms" style="display: flex; flex-direction: row; ">
+				<div class="col-sm-6">
+					<h3>Temperature Control</h3>
+					<div class="form-group">
+						<label for="ac-temperature">Set Temperature</label>
+						<input type="number" class="form-control" id="ac-temperature" placeholder="Enter temperature in °C" required>
+						<label for="ac-id">ID</label>
+						<select class="form-control" id="ac-id" required>
+							<option>1</option>
+							<option>2</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<h3>AC Control</h3>
+					<label for="ac-mode">Mode</label>
+					<div class="form-group" style="text-align: center;">
+						<select class="form-control" id="ac-mode" required>
+							<option>Cool</option> 
+							<option>Heat</option>
+							<option>Fan</option>
+						</select>
+						
+					<button type="submit" class="btn btn-primary" id="acform" style="margin-top:50px ;">Submit</button>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<h3>Speed Control</h3>
+					<div class="form-group">
+						<label for="ac-speed">Speed</label>
+						<select class="form-control" id="ac-speed" required>
+							<option>Low</option>
+							<option>Medium</option>
+							<option>High</option>
+						</select>
+					</div>
+					<label for="ac-state">State</label>
+						<select class="form-control" id="ac-state" required>
+							<option>Off</option>
+							<option>On</option>
+						</select>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="../web/app.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+<footer class="footer mt-auto py-3">
+	<div class="container">
+		<p>Samarth &copy; Smart Building. All rights reserved.</p>
+	</div>
+</footer>
+
+</html>

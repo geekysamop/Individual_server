@@ -1,0 +1,17 @@
+[
+    {
+        "_id": "6410839220ebbe97e7482cbd",
+        "light": 3,
+        "state": "Off"
+    },
+    {
+        "_id": "6410839220ebbe97e7482cbb",
+        "light": 2,
+        "state": "On"
+    },
+    {
+        "_id": "6410839220ebbe97e7482cbc",
+        "light": 1,
+        "state": "On"
+    }
+]

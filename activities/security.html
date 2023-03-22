@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Building - Security</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="../welcome">Smart Building</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../activities/lighting">Lighting</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="../activities/air-conditioning">Air Conditioning</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../activities/security">Security</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="others.html">Others</a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <h1>Security Control Panel</h1>
+                <form>
+                    <div class="row">
+                        <table class="table" style="text-align: center;" id="secdata">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Access</th>
+                                    <th>Camera</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <h3><label> Enter Name</label></h3>
+                                <input type="text" class="form-control" id="secname" placeholder="Enter Name">
+                            </div>
+                            <h3 >Camera Status</h3> 
+                            <div class="form-group">
+                                <label>Security Camera:</label>
+                                <select class="form-control" id="seccam">
+                                    <option value="Off">Off</option>
+                                    <option value="On">On</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3>Access Control</h3> 
+                            <p>Grant or deny access to your building</p>
+                            
+                            <label>Access Control:</label>
+                            <div class="form-group" style="text-align: center;">
+                                <select class="form-control" id="access">
+                                    <option value="deny">Deny</option>
+                                    <option value="grant">Grant</option>
+                                </select>
+                                <button type="submit" c lass="btn btn-primary" id="secform" style="margin-top: 20px;">Submit</button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="../web/app.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <p>Samarth &copy; Smart Building. All rights reserved.</p>
+    </div>
+</footer>
+
+</html>

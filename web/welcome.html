@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" style="height: auto !important;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to our Smart Building</title>
+    <link rel="stylesheet" href="../resources/styles.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://code.jquery.com 'sha256-DOU0/sVUxitk2MNb5zXL6o3XIe+ZQ5oKG5jmGDO9PmQ='">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:gap: http://www.visitsingapore.com   https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://code.jquery.com;"> -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:gap: http://www.visitsingapore.com   https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+    <style>
+        .menuic {
+            width: 20px;
+            margin-top: 4px;
+            height: 4px;
+            background-color: #fff;
+        }
+
+        .left-nav {
+            position: absolute;
+            display: none;
+            top: 105px;
+            border-top: 1px solid #fff;
+            left: 0;
+            height: 150%;
+            width: 200px;
+            background-color: #333;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .left-nav ul {
+            list-style: none;
+            margin: 20px;
+            padding: 10px;
+            text-align: center;
+
+        }
+
+        .left-nav li {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .left-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to our Smart Building</h1>
+        <nav class="main-nav">
+
+            <div class="menu-icon">
+                <div class="menuic"></div>
+                <div class="menuic"></div>
+                <div class="menuic"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <nav class="left-nav" style="display: none;">
+            <ul>
+                <li><a href="../web/devices-list">Devices</a></li><hr>
+                <li><a href="../web/add">Add Devices</a></li><hr>
+                <li><a href="../web/sdata">Sensor Data</a></li><hr>
+                <li><a href="../web/chart">Chart</a></li><hr>
+                <li><a href="../activities/lighting">Activities</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Our Smart Building</h2>
+            <p>Welcome to our state-of-the-art Smart Building! Our building is equipped with the latest in smart
+                technology, which allows us to provide our tenants with the highest level of comfort, security, and
+                energy efficiency.</p>
+            <p>Our building features smart lighting, temperature control, and security systems, all of which are
+                integrated with our building management system. Our system also allows us to monitor and manage energy
+                usage, ensuring that we operate our building in the most sustainable way possible.</p>
+        </section>
+        <section id="services">
+            <h2>Services We Offer</h2>
+            <p>We offer a range of services to our tenants, including:</p>
+            <ul>
+                <li>24/7 security monitoring</li>
+                <li>Smart temperature control</li>
+                <li>Smart lighting control</li>
+                <li>Energy usage monitoring and optimization</li>
+                <li>Concierge services</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you're interested in learning more about our Smart Building, or if you're interested in renting one of
+                our units, please don't hesitate to contact us.</p>
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+    <script src="../web/app.js"></script>
+
+</body>
+<footer style="bottom: auto;">
+    <p>Samarth &copy; Smart Building. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+<script>
+    $('.menu-icon').click(function () {
+        $('.left-nav').animate({ width: 'toggle' }, 200);
+    });
+</script>
+
+</html>

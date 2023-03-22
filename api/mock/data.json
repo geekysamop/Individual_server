@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "6414b32c11cf504db602811c",
+    "id": "2",
+    "name": "Device 2",
+    "user": "SamarthMistry"
+  },
+  {
+    "_id": "6414b32c11cf504db602811d",
+    "id": "4",
+    "name": "Device 4",
+    "user": "Sam"
+  },
+  {
+    "_id": "6414b32c11cf504db602811e",
+    "id": "5",
+    "name": "Device 5",
+    "user": "SamOP"
+  },
+  {
+    "_id": "6414b32c11cf504db602811f",
+    "id": "3",
+    "name": "Device 3",
+    "user": "SamMistry"
+  },
+  {
+    "_id": "6414b32c11cf504db6028120",
+    "id": "1",
+    "name": "Device 1",
+    "user": "Samarth"
+  },
+  {
+    "_id": "6414bb3371fe734a5739e583",
+    "name": "NewLegion",
+    "user": "NewSam",
+    "__v": 0
+  },
+  {
+    "_id": "6414c3953c0471e2bba31c35",
+    "name": "asd",
+    "user": "asd",
+    "__v": 0
+  }
+]

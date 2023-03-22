@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devices</title>
+    <link rel="stylesheet" href="../resources/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        html{
+            height: auto;
+        }
+        .container {
+            margin-top: 5% !important;
+            left: 15%;
+            padding: 30px;
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            border-radius: 7px;
+            box-shadow: 1px 1px 15px lightgray;
+            vertical-align: middle;
+        }
+        table{
+            margin-bottom: 0 !important;
+        }
+        th,td{
+            
+            background-color: #333 !important;
+            border: 1px solid white;
+            justify-content: space-evenly;
+        }
+        .menuic {
+            width: 20px;
+            margin-top: 4px;
+            height: 4px;
+            background-color: #fff;
+        }
+
+        .left-nav {
+            position: absolute;
+            display: none;
+            top: 105px;
+            border-top: 1px solid #fff;
+            left: 0;
+            height: 85%;
+            width: 200px;
+            background-color: #333;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .left-nav ul {
+            list-style: none;
+            margin: 20px;
+            padding: 10px;
+            text-align: center;
+
+        }
+
+        .left-nav li {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .left-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body >
+    <header>
+        <h1>Welcome to our Smart Building</h1>
+        
+        <div class="menu-icon">
+            <div class="menuic"></div>
+            <div class="menuic"></div>
+            <div class="menuic"></div>
+        </div>
+        <nav class="left-nav" style="display: none;">
+            <ul>
+                <li><a href="../welcome">Smart Building</a></li><hr>
+                <li><a href="../web/add">Add Devices</a></li><hr>
+                <li><a href="../web/sdata">Sensor Data</a></li><hr>
+                <li><a href="../web/chart">Chart</a></li><hr>
+                <li><a href="../activities/lighting">Activities</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Smart Building Devices</h2>
+        <table class="table table-dark" id="data">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Device Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+    </div>
+    <footer >
+        <p>Samarth &copy; Smart Building. All rights reserved.</p>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script src="../web/app.js"></script>
+<script>
+    $('.menu-icon').click(function () {
+        $('.left-nav').animate({ width: 'toggle' }, 200);
+    });
+</script>
+</html>

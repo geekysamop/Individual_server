@@ -1,0 +1,18 @@
+[
+    {
+        "_id": "641490384bf3e92d91d1e003",
+        "id": 1,
+        "mode": "Heat",
+        "speed": "High",
+        "state": "On",
+        "temperature": "69"
+    },
+    {
+        "_id": "6414937b6e73980d4afba6fe",
+        "id": 2,
+        "mode": "Cool",
+        "speed": "High",
+        "state": "Off",
+        "temperature": "49"
+    }
+]
