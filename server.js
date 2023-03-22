@@ -137,9 +137,9 @@ app.post('/login', passport.authenticate('local', {
     }
   }
 
-  var server = https.createServer(sslOptions, app).listen(port, function(){
-    console.log("Express server listening on port https://localhost:" + port);
-    });
-// app.listen(port, () => {
-//     console.log(`Server listening at http://localhost:${port}`);
-// });
+//  var server = https.createServer(sslOptions, app).listen(port, function(){
+  //  console.log("Express server listening on port https://localhost:" + port);
+    //});
+ app.listen(port, () => {
+     console.log(`Server listening at http://localhost:${port}`);
+ });
