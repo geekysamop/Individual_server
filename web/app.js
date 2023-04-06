@@ -1,5 +1,5 @@
-const API_URL = 'http://localhost:5000/api';
-const SENSOR_API = 'http://localhost:5001/api/sensordata';
+const API_URL = 'https://api-dlzy.onrender.com/api';
+const SENSOR_API = 'https://mqtt-4xjc.onrender.com/api/sensordata';
 $.get(`${API_URL}/light`)
     .then(response => {
         response.forEach(lights => {
