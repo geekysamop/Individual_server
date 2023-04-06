@@ -40,9 +40,9 @@ app.get('/', (req, res) => {
 });
 
 /**
-* @api {get} /api/devices AllDevices An array of all devices
+* @api {get} /api/devices All Devices An array of all devices
 * @apiGroup Device
-* @apiSuccessExample {json}Devices Success-Response:
+* @apiSuccessExample {json}Devices :
 *  [
 *  {
 *    "_id": "6414b32c11cf504db602811c",
@@ -87,9 +87,9 @@ app.get('/', (req, res) => {
 *    "__v": 0
 *  }
 *]
-* @api {get} /api/light AllDevices An array of all devices
+* @api {get} /api/light All lights An array of all devices
 * @apiGroup lights
-* @apiSuccessExample {json} Light Success-Response:
+* @apiSuccessExample {json} Light :
 *[
 *    {
 *        "_id": "6410839220ebbe97e7482cbd",
@@ -107,9 +107,9 @@ app.get('/', (req, res) => {
 *        "state": "On"
 *    }
 *]
-* @api {get} /api/ac AllDevices An array of all devices
+* @api {get} /api/ac All Ac An array of all devices
 * @apiGroup Ac
-* @apiSuccessExample {json} Success-Response:
+* @apiSuccessExample {json} Ac:
 *[
 *    {
 *        "_id": "641490384bf3e92d91d1e003",
@@ -128,9 +128,9 @@ app.get('/', (req, res) => {
 *        "temperature": "49"
 *    }
 *]
-* @api {get} /api/security AllDevices An array of all devices
+* @api {get} /api/security All api An array of all devices
 * @apiGroup security
-* @apiSuccessExample {json} Success-Response:
+* @apiSuccessExample {json} Security:
 *[
 *    {
 *        "_id": "6414a40e8e28b718ac4c9898",
@@ -160,6 +160,7 @@ app.get('/', (req, res) => {
 *  }
 */
 
+
 app.get('/api/devices',(req,res)=>{
   Device.find({})
   .then((devices)=>{
@@ -169,9 +170,7 @@ app.get('/api/devices',(req,res)=>{
     console.log('Error getting devices',err);
     res.status(500).send('Error getting devices');
   });
-});
-
-
+});-
 
 app.get('/api/light', (req, res) => {
   Light.find({})
