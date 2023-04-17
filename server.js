@@ -34,6 +34,11 @@ const web = `${__dirname}/web`;
 const activities = `${__dirname}/activities`;
 const resources = `${__dirname}/resources`;
 
+
+app.use(express.static(web));
+app.use(express.static(activities));
+app.use(express.static(resources));
+
 const port = 3000;
 
 app.use(helmet.dnsPrefetchControl());
@@ -44,7 +49,6 @@ app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(helmet.xssFilter());
 
-app.use(flash())
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -54,17 +58,14 @@ app.use(passport.session())
 
 app.set("view engine","ejs");
 
-
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 app.get('/welcome',ensureAuthenticated,(req, res) => {
     res.sendFile(`${web}/welcome.html`)
-});
-
-app.get('/app.js',ensureAuthenticated,  (req, res) => {
-    res.sendFile(`${web}/app.js`)
-});
-app.get('/web/app.js',ensureAuthenticated,  (req, res) => {
-    res.sendFile(`${web}/app.js`)
 });
 
 app.get('/web/devices-list',ensureAuthenticated,  (req, res) => {
@@ -85,7 +86,7 @@ app.get('/activities/lighting',ensureAuthenticated,  (req, res) => {
     res.sendFile(`${activities}/lighting.html`)
 });
 
-app.get('/activities/air-conditioning',ensureAuthenticated, (req, res) => {
+app.get('/activities/ac',ensureAuthenticated, (req, res) => {
     res.sendFile(`${activities}/air-conditioning.html`)
 });
 
@@ -137,9 +138,6 @@ app.post('/login', passport.authenticate('local', {
     }
   }
 
-//  var server = https.createServer(sslOptions, app).listen(port, function(){
-  //  console.log("Express server listening on port https://localhost:" + port);
-    //});
  app.listen(port, () => {
      console.log(`Server listening at http://localhost:${port}`);
  });

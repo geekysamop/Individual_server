@@ -1,5 +1,3 @@
-
-
 #include <ArduinoMqttClient.h>
 #include <WiFiNINA.h>
 
@@ -70,7 +68,7 @@ void loop() {
     if (previousState != readSensor) {
       Serial.println("Motion detected");
       mqttClient.beginMessage(topic);
-      mqttClient.print("Motion detected");
+      mqttClient.print("Car Parked");
       mqttClient.endMessage();      
       previousState = readSensor;
       delay(500);
@@ -80,7 +78,7 @@ void loop() {
     if (previousState != readSensor) {
       Serial.println("Motion ended");
       mqttClient.beginMessage(topic);
-      mqttClient.print("Motion ended");
+      mqttClient.print("Car not parked");
       mqttClient.endMessage(); 
       previousState = readSensor;
       delay(500);

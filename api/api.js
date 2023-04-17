@@ -207,6 +207,7 @@ app.get('/api/security', (req, res) => {
 
 app.post('/api/devices', async (req, res) => {
   const { name, user } = req.body;
+  
   console.log(name+" added with username "+user)
   const newDevice = new Device({
     name,
