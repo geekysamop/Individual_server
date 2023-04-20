@@ -71,7 +71,7 @@
       function updateChart() {
         // Make an AJAX request to the API to retrieve data
         $.ajax({
-          url: 'http://localhost:5001/api/sensorData',
+          url: 'https://mqtt-4ni3.onrender.com/api/sensordata',
           dataType: 'json',
           success: function(data) {
             // Process the data into Highcharts-compatible format
